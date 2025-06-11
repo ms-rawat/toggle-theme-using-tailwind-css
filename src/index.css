@@ -1,3 +1,37 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Light theme */
+  --color-background-primary: #ffffff; /* White */
+  --color-text-primary: #1a202c; /* Gray 900 */
+  --color-background-secondary: #f7fafc; /* Gray 50 */
+  --color-text-secondary: #4a5568; /* Gray 700 */
+  --color-border-default: #e2e8f0; /* Gray 200 */
+  --color-primary-brand: #4299e1; /* Blue 500 */
+}
+
+.dark {
+  /* Dark theme overrides */
+  --color-background-primary: #1a202c; /* Gray 900 */
+  --color-text-primary: #ffffff; /* White */
+  --color-background-secondary: #2d3748; /* Gray 800 */
+  --color-text-secondary: #cbd5e0; /* Gray 400 */
+  --color-border-default: #4a5568; /* Gray 700 */
+  --color-primary-brand: #63b3ed; /* Blue 300 */
+}
+
+/* Use the @theme directive to tell Tailwind to generate utility classes from your CSS variables */
+@theme {
+  --color-background-primary: var(--color-background-primary);
+  --color-text-primary: var(--color-text-primary);
+  --color-background-secondary: var(--color-background-secondary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border-default: var(--color-border-default);
+  --color-primary-brand: var(--color-primary-brand);
+
+  /* You can also define other theme properties here, like spacing, fonts, etc. */
+  /* Example for a custom font: */
+  /* --font-heading: "Roboto", sans-serif; */
+}
